@@ -21,11 +21,15 @@
   ],
   "scripts": {
     "prepublishOnly": "bash prepublish",
-    "postpublish": "git push && git push --tags"
+    "postpublish": "git push && git push --tags",
+    "start": "serve .",
+    "mapshaper": "mapshaper-gui -q us.topojson.json",
+    "prestart": "npm run prepublishOnly"
   },
   "devDependencies": {
     "d3-dsv": "^1.0.3",
     "d3-geo-projection": "^2.0.0",
+    "mapshaper": "^0.5.113",
     "ndjson-cli": "^0.3.0",
     "shapefile": "^0.6.1",
     "topojson-client": "^3.0.0",
