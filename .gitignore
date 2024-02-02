@@ -4,3 +4,7 @@ build/
 node_modules
 npm-debug.log
 *-10m.json
+YCOM-Project-Start
+shapefiles/*
+topojson/*
+package-lock.json

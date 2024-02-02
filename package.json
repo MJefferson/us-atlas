@@ -17,23 +17,32 @@
     "url": "https://github.com/topojson/us-atlas.git"
   },
   "files": [
-    "*-10m.json"
+    "*-10m.json",
+    "output*"
   ],
   "scripts": {
     "prepublishOnly": "bash prepublish",
     "postpublish": "git push && git push --tags",
     "start": "serve .",
-    "mapshaper": "mapshaper-gui -q us.topojson.json",
-    "prestart": "npm run prepublishOnly"
+    "mapshaper": "mapshaper-gui -q output/*.json",
+    "prestart": "npm run prepublishOnly",
+    "mapshaper:view": "mapshaper-gui -qa topojson/*.json"
   },
   "devDependencies": {
-    "d3-dsv": "^1.0.3",
-    "d3-geo-projection": "^2.0.0",
-    "mapshaper": "^0.5.113",
+    "cmdify": "^0.0.4",
+    "d3-dsv": "^1.2.0",
+    "d3-geo-projection": "^2.9.0",
+    "download": "8.0.0",
+    "mapshaper": "^0.6.61",
     "ndjson-cli": "^0.3.0",
     "shapefile": "^0.6.1",
-    "topojson-client": "^3.0.0",
-    "topojson-server": "^3.0.0",
-    "topojson-simplify": "^3.0.0"
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3"
+  },
+  "dependencies": {
+    "chalk-pipe": "^6.0.0",
+    "gdal": "^0.11.1",
+    "inquirer": "^9.2.13"
   }
 }
